@@ -849,7 +849,6 @@ header {
   }
 }
 
-
 /* ---------- (Прайс) ---------- */
 #price {
   padding: 0;
@@ -933,9 +932,6 @@ header {
 }
 
 /* ---------- (Отзывы) ---------- */
-
-/* ---------- (Отзывы) ---------- */
-
 #reviews {
   background: #050505;
 }
@@ -946,17 +942,15 @@ header {
   gap: 14px;
 }
 
-/* Одна "линия" отзывов */
 .reviews-row {
   display: flex;
   gap: 14px;
-  overflow-x: auto;            /* свайп/скролл по горизонтали */
+  overflow-x: auto;
   padding-bottom: 6px;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
 }
 
-/* смещения линий, чтобы они начинались не ровно */
 .reviews-row.row-1 {
   padding-left: 0;
 }
@@ -971,7 +965,7 @@ header {
 
 /* карточка отзыва */
 .review-card {
-  flex: 0 0 260px;             /* фиксированная ширина + не сжимается */
+  flex: 0 0 260px;
   max-width: 260px;
   background: var(--card-bg);
   border-radius: 20px;
@@ -981,10 +975,9 @@ header {
   flex-direction: column;
   gap: 6px;
   font-size: 14px;
-  scroll-snap-align: start;    /* при свайпе красиво "прилипают" */
+  scroll-snap-align: start;
 }
 
-/* опционально: чуть стилизуем скроллбар (виден на ПК) */
 .reviews-row::-webkit-scrollbar {
   height: 4px;
 }
@@ -1019,7 +1012,6 @@ header {
   color: var(--text-muted);
 }
 
-/* мобильная лёгкая подправка */
 @media (max-width: 600px) {
   .review-card {
     flex: 0 0 240px;
@@ -1035,7 +1027,6 @@ header {
     padding-left: 24px;
   }
 }
-
 
 /* ---------- (Контакты) ---------- */
 
@@ -1592,10 +1583,9 @@ footer .container {
     transform: translateY(110vh);
   }
 }
-/* ==== МОБИЛЬНАЯ КОРРЕКЦИЯ ТОЧЕК НА КАРТЕ ==== */
+
 @media (max-width: 600px) {
 
-  /* чтобы картинка не масштабировалась ещё сильнее */
   .map-image-wrap {
     transform: none;
     padding: 12px;
@@ -1605,9 +1595,6 @@ footer .container {
     width: 100%;
     height: auto;
   }
-
-  /* Дальше — координаты для мобильной версии.
-     ЧИСЛА ПРИМЕРНЫЕ — ТЫ ПОДГОНЯЕШЬ ИХ ПОД СВОЙ СКРИН. */
 
   .map-hotspot[data-label="SOLO 1"] {
     top: 93% !important;
@@ -1684,8 +1671,6 @@ footer .container {
     left: 75% !important;
   }
 }
-
-
   </style>
 </head>
 <body>
@@ -1720,7 +1705,7 @@ footer .container {
         </button>
       </nav>
 
-      <!-- mobile menu -->
+      <!-- мобильное меню -->
       <div class="nav-mobile" id="navMobile">
         <a href="#hero">Главная</a>
         <a href="#about">О нас</a>
@@ -1733,7 +1718,7 @@ footer .container {
     </div>
   </header>
 
-  <!-- Hero / Главная -->
+  <!-- Главная -->
   <section class="hero" id="hero">
     <div class="container hero-inner">
       <div>
@@ -1818,7 +1803,7 @@ footer .container {
   </section>
 <div class="section-divider"></div>
 
-  <!-- About / О нас -->
+  <!-- О нас -->
   <section id="about">
     <div class="container">
       <h2 class="section-title">О клубе COLIZEUM</h2>
@@ -1909,7 +1894,7 @@ footer .container {
     </div>
   </section>
 <div class="section-divider"></div>
-  <!-- Map / Карта клуба -->
+  <!-- Карта клуба -->
 <section id="map">
   <div class="container">
     <h2 class="section-title">Карта COLIZEUM</h2>
@@ -1919,11 +1904,8 @@ footer .container {
     </p>
 
     <div class="map-layout">
-      <!-- Левая часть: карта с точками -->
       <div class="map-image-wrap">
         <img src="Scheme.svg" alt="Схема компьютерного клуба COLIZEUM" class="club-scheme">
-
-        <!-- ==== ТОЧКИ НА КАРТЕ (координаты подгонишь под свою схему) ==== -->
 
         <!-- SOLO -->
         <button class="map-hotspot" data-kind="solo" data-label="SOLO 1"
@@ -1970,7 +1952,6 @@ footer .container {
                 style="top: 19%; left: 64%;" aria-label="VIP PS"></button>
       </div>
 
-      <!-- Правая часть: карточка выбранной зоны -->
       <div class="map-room-card" id="roomCard">
         <div class="map-room-card-header">
           <span class="map-room-badge" id="roomBadge">Зона</span>
@@ -1978,7 +1959,6 @@ footer .container {
         </div>
 
         <div class="map-room-body">
-          <!-- слева — железо / описание -->
           <div class="map-room-specs" id="roomSpecs">
             <p class="map-room-placeholder">
               Нажмите на любую точку на схеме, чтобы посмотреть конфиг
@@ -1986,7 +1966,6 @@ footer .container {
             </p>
           </div>
 
-          <!-- справа — фото -->
           <div class="map-room-photo">
             <img id="roomPhoto" src="" alt="" style="opacity:0;">
           </div>
@@ -1998,7 +1977,7 @@ footer .container {
 
 <div class="section-divider"></div>
 
-  <!-- Price / Прайс -->
+  <!-- Прайс -->
 <section id="price">
   <div class="price-inner">
     <div class="container">
@@ -2165,8 +2144,6 @@ footer .container {
     <h2 class="section-title">Отзывы гостей</h2>
 
     <div class="reviews-rows">
-
-      <!-- линиия 1 -->
       <div class="reviews-row row-1">
         <div class="review-card">
           <div class="review-header">
@@ -2298,7 +2275,7 @@ footer .container {
 </section>
 
 <div class="section-divider"></div>
-  <!-- Contacts / Контакты -->
+  <!-- Контакты -->
   <section id="contacts">
     <div class="container">
       <h2 class="section-title">Контакты</h2>
@@ -2350,7 +2327,7 @@ footer .container {
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- подвал -->
   <footer>
     <div class="container">
       <div>© COLIZEUM, 2025. Компьютерный клуб.</div>
@@ -2359,7 +2336,7 @@ footer .container {
     </div>
   </footer>
 
-  <!-- Modal: приложение -->
+  <!-- модалка приложение -->
 <div class="modal-backdrop" id="appModal">
   <div class="modal">
     <div class="modal-header">
@@ -2398,8 +2375,7 @@ footer .container {
       </div>
     </div>
     <div class="modal-footer">
-      <!-- можешь сюда потом добавить мелкий текст, типа:
-           "Доступно в COLIZEUM по России" -->
+для скачивания приложения нажмите на текст нужно маркета.
     </div>
   </div>
 </div>
@@ -2520,8 +2496,7 @@ footer .container {
     }
   };
 
-  // Конкретные зоны: на каждую — своё фото и при желании описание
-  // ключи должны совпадать с data-label у кнопок (map-hotspot)
+  // Конкретные зоны: на каждую — своё фото
   const zones = {
     "SOLO 1": {
       photo: "img/rooms/solo-1(2).jpg"
@@ -2648,3 +2623,4 @@ for (let i = 0; i < 60; i++) {
 </script>
 </body>
 </html>
+
